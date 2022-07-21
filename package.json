@@ -1,0 +1,27 @@
+{
+  "name": "weather-cli",
+  "version": "1.0.0",
+  "description": "CLI for getting weather",
+  "main": "index.js",
+  "bin": "./index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KonstantinKuksov/weather-cli.git"
+  },
+  "keywords": [
+    "cli",
+    "weather",
+    "node",
+    "node.js"
+  ],
+  "author": "Konstantin Kuksov <kkuksov@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KonstantinKuksov/weather-cli/issues"
+  },
+  "homepage": "https://github.com/KonstantinKuksov/weather-cli#readme"
+}
