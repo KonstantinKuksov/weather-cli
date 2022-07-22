@@ -12,7 +12,10 @@ export const english = {
       -h - print help.
     `),
   errorTitle: 'ERROR:',
+  errorToken: 'token is not provided',
+  errorLanguage: 'language does not support.',
   successTitle: 'SUCCESS:',
+  successToken: 'token has saved.',
 };
 
 export const russian = {
@@ -26,7 +29,10 @@ export const russian = {
       -h - вывести справку.
     `),
   errorTitle: 'ОШИБКА:',
+  errorToken: 'токен не передан',
+  errorLanguage: 'язык не поддерживается.',
   successTitle: 'ВЫПОЛНЕНО УСПЕШНО:',
+  successToken: 'токен сохранен.',
 };
 
 export const ukrainian = {
@@ -40,5 +46,8 @@ export const ukrainian = {
       -h - показати довідку.
     `),
   errorTitle: 'ПОМИЛКА:',
+  errorToken: 'токен не передано',
+  errorLanguage: 'мова не підтримується.',
   successTitle: 'ВИКОНАНО УСПІШНО:',
+  successToken: 'токен збережено.',
 };
