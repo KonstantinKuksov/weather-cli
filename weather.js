@@ -8,7 +8,10 @@ import { english } from './services/language.service.js';
 import { saveToken } from './helpers/token-saver.js';
 
 if (!isExist(filePath)) {
-  writeFileSync(filePath, JSON.stringify({ language: english }));
+  writeFileSync(filePath, JSON.stringify({
+    language: english,
+    token: 'ec54e7e6d135f89a75490b3f14eb49f8',
+  }));
   printReadyMessage();
   process.exit(0);
 }
