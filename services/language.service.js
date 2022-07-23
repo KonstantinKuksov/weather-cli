@@ -10,6 +10,7 @@ export const english = {
       -t [API_TOKEN] - set weather API token;
       -l [LANGUAGE] - set the language;
       -h - print help.
+      The supported languages are English, Russian and Ukrainian.
     `),
   errorTitle: 'ERROR:',
   errorToken: 'token is not provided',
@@ -27,6 +28,7 @@ export const russian = {
       -t [API_TOKEN] - установить API токен;
       -l [ЯЗЫК] - установить язык;
       -h - вывести справку.
+      Поддерживаемые языки: русский, английский и украинский.
     `),
   errorTitle: 'ОШИБКА:',
   errorToken: 'токен не передан',
@@ -44,6 +46,7 @@ export const ukrainian = {
       -t [API_TOKEN] - встановити API токен;
       -l [МОВА] - встановити мову;
       -h - показати довідку.
+      Мови, що підтримуються: українська, англійська та російська.
     `),
   errorTitle: 'ПОМИЛКА:',
   errorToken: 'токен не передано',
