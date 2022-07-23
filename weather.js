@@ -2,11 +2,12 @@
 import { writeFileSync } from 'fs';
 import { getArgs } from './helpers/args.js';
 import { printHelp, printReadyMessage } from './services/log.service.js';
-import { filePath, getKeyValue, isExist, saveKeyValue, TOKEN_DICTIONARY } from './services/storage.service.js';
+import { filePath, getKeyValue, isExist, TOKEN_DICTIONARY } from './services/storage.service.js';
 import { languageSelector } from './helpers/language-selector.js';
 import { english } from './services/language.service.js';
 import { saveToken } from './helpers/token-saver.js';
 import { getCurrentWeather } from './helpers/get-current-weather.js';
+import { saveLocation } from './helpers/location-saver.js';
 
 if (!isExist(filePath)) {
   writeFileSync(filePath, JSON.stringify({
@@ -26,7 +27,7 @@ const initCLI = async () => {
     languageSelector(args.l);
   }
   if (args.s) {
-    saveKeyValue(TOKEN_DICTIONARY.place, args.s);
+    saveLocation(args.s);
   }
   if (args.h) {
     return printHelp();
@@ -34,7 +35,7 @@ const initCLI = async () => {
   if (args.p) {
     return await getCurrentWeather(args.p);
   }
-  const savedCity = getKeyValue(TOKEN_DICTIONARY.place);
+  const savedCity = getKeyValue(TOKEN_DICTIONARY.location);
   await getCurrentWeather(savedCity);
 };
 

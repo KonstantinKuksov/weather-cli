@@ -4,13 +4,13 @@ import { printError } from '../services/log.service.js';
 
 const language = getCurrentLanguage();
 
-export const getCurrentWeather = async (place) => {
+export const getCurrentWeather = async (location) => {
   try {
-    const forecastData = await getWeather(place);
-    console.log(forecastData);
+    const weather = await getWeather(location);
+    console.log(weather);
   } catch (e) {
     switch (e?.response?.status) {
-      case 404: printError(language.errorPlace);
+      case 404: printError(language.errorLocation);
         break;
       case 401: printError(language.errorToken);
         break;

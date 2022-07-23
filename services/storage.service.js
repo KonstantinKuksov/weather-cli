@@ -6,7 +6,7 @@ export const filePath = join(homedir(), 'weather-data.json');
 
 export const TOKEN_DICTIONARY = {
   token: 'token',
-  place: 'place',
+  location: 'location',
   language: 'language',
 };
 

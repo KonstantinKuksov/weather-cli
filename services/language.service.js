@@ -5,20 +5,21 @@ export const english = {
   language: 'en',
   help: dedent(`
       ${chalk.bgCyan('HELP:')}
-      without params - print weather in the default place;
-      -s [PLACE_NAME] - set the default place;
-      -p [PLACE_NAME] - print weather in a chosen place;
+      without params - print weather in the default location;
+      -s [LOCATION_NAME] - set the default location;
+      -p [LOCATION_NAME] - print weather in the chosen location;
       -t [API_TOKEN] - set weather API token;
       -l [LANGUAGE] - set the language;
       -h - print help.
-      The supported languages are English, Russian and Ukrainian.
+      The supported languages are English, Russian, Ukrainian.
     `),
   errorTitle: 'ERROR:',
   errorToken: 'token is not provided or invalid',
   errorLanguage: 'language does not support.',
-  errorPlace: 'incorrect location.',
+  errorLocation: 'incorrect location.',
   successTitle: 'SUCCESS:',
   successToken: 'token has saved.',
+  successLocation: 'saved as default location.',
 };
 
 export const russian = {
@@ -31,15 +32,16 @@ export const russian = {
       -t [API_TOKEN] - установить API токен;
       -l [ЯЗЫК] - установить язык;
       -h - вывести справку.
-      Поддерживаемые языки: русский, английский и украинский.
+      Поддерживаемые языки: русский, английский, украинский.
       Все атрибуты долны передаваться на английском языке.
     `),
   errorTitle: 'ОШИБКА:',
   errorToken: 'токен не передан или не поддерживатся',
   errorLanguage: 'язык не поддерживается.',
-  errorPlace: 'не указан или неверно указан населенный пункт.',
+  errorLocation: 'не указан или неверно указан населенный пункт.',
   successTitle: 'ВЫПОЛНЕНО УСПЕШНО:',
   successToken: 'токен сохранен.',
+  successLocation: 'сохранен как населенный пункт по умолчанию.',
 };
 
 export const ukrainian = {
@@ -52,13 +54,14 @@ export const ukrainian = {
       -t [API_TOKEN] - встановити API токен;`))}
       ${dedent(chalk.yellowBright(`-l [МОВА] - встановити мову;
       -h - показати довідку.
-      Мови, що підтримуються: українська, англійська та російська.
+      Мови, що підтримуються: українська, англійська, російська.
       Усі атрибути передаються англійською мовою`))}
     `,
   errorTitle: 'ПОМИЛКА:',
   errorToken: 'токен не передано або не підтримується',
   errorLanguage: 'мова не підтримується.',
-  errorPlace: 'населений пункт не вказано або вказано з помилкою.',
+  errorLocation: 'населений пункт не вказано або вказано з помилкою.',
   successTitle: 'ВИКОНАНО УСПІШНО:',
   successToken: 'токен збережено.',
+  successLocation: 'збережено як населенний пункт за замовчуванням.',
 };
