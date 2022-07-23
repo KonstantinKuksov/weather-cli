@@ -21,13 +21,13 @@ if (!isExist(filePath)) {
 const initCLI = async () => {
   const args = getArgs(process.argv);
   if (args.t) {
-    saveToken(args.t);
+    return saveToken(args.t);
   }
   if (args.l) {
-    languageSelector(args.l);
+    return languageSelector(args.l);
   }
   if (args.s) {
-    saveLocation(args.s);
+    return saveLocation(args.s);
   }
   if (args.h) {
     return printHelp();
