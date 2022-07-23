@@ -2,10 +2,11 @@
 import { writeFileSync } from 'fs';
 import { getArgs } from './helpers/args.js';
 import { printHelp, printReadyMessage } from './services/log.service.js';
-import { filePath, isExist, saveKeyValue } from './services/storage.service.js';
+import { filePath, isExist, saveKeyValue, TOKEN_DICTIONARY } from './services/storage.service.js';
 import { languageSelector } from './helpers/language-selector.js';
 import { english } from './services/language.service.js';
 import { saveToken } from './helpers/token-saver.js';
+import { getWeather } from './services/api.service.js';
 
 if (!isExist(filePath)) {
   writeFileSync(filePath, JSON.stringify({
@@ -16,11 +17,11 @@ if (!isExist(filePath)) {
   process.exit(0);
 }
 
-const initCLI = () => {
+const initCLI = async () => {
   const args = getArgs(process.argv);
   console.log(args);
   if (args.s) {
-    saveKeyValue('place', args.s);
+    saveKeyValue(TOKEN_DICTIONARY.place, args.s);
   }
   if (args.l) {
     languageSelector(args.l);

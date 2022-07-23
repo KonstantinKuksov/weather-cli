@@ -1,5 +1,5 @@
 import chalk from 'chalk';
-import { getKeyValue } from './storage.service.js';
+import { getKeyValue, TOKEN_DICTIONARY } from './storage.service.js';
 
 export const printErrorAndExit = (error) => {
   console.log(chalk.bgRed('ERROR:'), chalk.red(error));
@@ -8,7 +8,7 @@ export const printErrorAndExit = (error) => {
 
 let language;
 try {
-  language = getKeyValue('language');
+  language = getKeyValue(TOKEN_DICTIONARY.language);
 } catch (e) {
   printErrorAndExit(e.message);
 }

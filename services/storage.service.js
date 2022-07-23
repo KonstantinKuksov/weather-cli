@@ -4,6 +4,12 @@ import { readFileSync, writeFileSync, statSync } from 'fs';
 
 export const filePath = join(homedir(), 'weather-data.json');
 
+export const TOKEN_DICTIONARY = {
+  token: 'token',
+  place: 'place',
+  language: 'language',
+};
+
 export const saveKeyValue = (key, value) => {
   const file = readFileSync(filePath);
   const data = JSON.parse(file);

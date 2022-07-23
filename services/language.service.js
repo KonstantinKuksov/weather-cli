@@ -2,6 +2,7 @@ import dedent from 'dedent-js';
 import chalk from 'chalk';
 
 export const english = {
+  language: 'en',
   help: dedent(`
       ${chalk.bgCyan('HELP:')}
       without params - print weather in the default place;
@@ -20,6 +21,7 @@ export const english = {
 };
 
 export const russian = {
+  language: 'ru',
   help: dedent(`
       ${chalk.bgCyan('СПРАВКА:')}
       без параметров - вывести погоду в населенном пункте по умолчанию;
@@ -38,6 +40,7 @@ export const russian = {
 };
 
 export const ukrainian = {
+  language: 'ua',
   help: dedent(`
       ${chalk.bgCyan('ДОВІДКА:')}
       без параметрів - показати погоду в населеному пункті за замовчуванням;
