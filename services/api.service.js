@@ -7,6 +7,7 @@ export const getWeather = async (place) => {
   const lang = getKeyValue(TOKEN_DICTIONARY.language);
   if (!token) {
     printTokenError();
+    process.exit(1);
   }
   const { data } = await axios.get('https://api.openweathermap.org/data/2.5/weather', {
     params: {

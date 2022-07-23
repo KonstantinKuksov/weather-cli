@@ -2,11 +2,11 @@
 import { writeFileSync } from 'fs';
 import { getArgs } from './helpers/args.js';
 import { printHelp, printReadyMessage } from './services/log.service.js';
-import { filePath, isExist, saveKeyValue, TOKEN_DICTIONARY } from './services/storage.service.js';
+import { filePath, getKeyValue, isExist, saveKeyValue, TOKEN_DICTIONARY } from './services/storage.service.js';
 import { languageSelector } from './helpers/language-selector.js';
 import { english } from './services/language.service.js';
 import { saveToken } from './helpers/token-saver.js';
-import { getWeather } from './services/api.service.js';
+import { getCurrentWeather } from './helpers/get-current-weather.js';
 
 if (!isExist(filePath)) {
   writeFileSync(filePath, JSON.stringify({
@@ -19,24 +19,23 @@ if (!isExist(filePath)) {
 
 const initCLI = async () => {
   const args = getArgs(process.argv);
-  console.log(args);
-  if (args.s) {
-    saveKeyValue(TOKEN_DICTIONARY.place, args.s);
+  if (args.t) {
+    saveToken(args.t);
   }
   if (args.l) {
     languageSelector(args.l);
   }
-  if (args.t) {
-    saveToken(args.t);
+  if (args.s) {
+    saveKeyValue(TOKEN_DICTIONARY.place, args.s);
   }
   if (args.h) {
     return printHelp();
   }
   if (args.p) {
-    // show weather in custom place
+    return await getCurrentWeather(args.p);
   }
-  // show weather in saved city
-  console.log('App works!');
+  const savedCity = getKeyValue(TOKEN_DICTIONARY.place);
+  await getCurrentWeather(savedCity);
 };
 
 initCLI();

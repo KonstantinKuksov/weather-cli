@@ -1,17 +1,12 @@
 import chalk from 'chalk';
-import { getKeyValue, TOKEN_DICTIONARY } from './storage.service.js';
+import { getCurrentLanguage } from '../helpers/get-language.js';
 
 export const printErrorAndExit = (error) => {
   console.log(chalk.bgRed('ERROR:'), chalk.red(error));
   process.exit(1);
 };
 
-let language;
-try {
-  language = getKeyValue(TOKEN_DICTIONARY.language);
-} catch (e) {
-  printErrorAndExit(e.message);
-}
+const language = getCurrentLanguage();
 
 export const printError = (error) => {
   console.log(chalk.bgRed(language.errorTitle), chalk.red(error));
