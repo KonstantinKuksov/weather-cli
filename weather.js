@@ -20,23 +20,29 @@ if (!isExist(filePath)) {
 
 const initCLI = async () => {
   const args = getArgs(process.argv);
+  console.log(args);
   if (args.t) {
-    return saveToken(args.t);
+    console.log('args.t');
+    // return saveToken(args.t);
   }
   if (args.l) {
-    return languageSelector(args.l);
+    console.log('args.l');
+    // return languageSelector(args.l);
   }
   if (args.s) {
-    return saveLocation(args.s);
+    console.log('args.s');
+    // return saveLocation(args.s);
   }
   if (args.h) {
-    return printHelp();
+    console.log('args.h');
+    // return printHelp();
   }
   if (args.p) {
-    return await getCurrentWeather(args.p);
+    console.log('args.p');
+    // return await getCurrentWeather(args.p);
   }
-  const savedCity = getKeyValue(TOKEN_DICTIONARY.location);
-  await getCurrentWeather(savedCity);
+  // const savedCity = getKeyValue(TOKEN_DICTIONARY.location);
+  // await getCurrentWeather(savedCity);
 };
 
 initCLI();
